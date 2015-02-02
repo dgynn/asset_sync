@@ -18,10 +18,10 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "asset_sync"
 
-  s.add_dependency('fog', ">= 1.8.0")
-  s.add_dependency('unf')
+  s.add_dependency('fog-core')
   s.add_dependency('activemodel')
 
+  s.add_development_dependency 'fog'
   s.add_development_dependency "rspec"
   s.add_development_dependency "bundler"
   s.add_development_dependency "jeweler"

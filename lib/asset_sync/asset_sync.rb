@@ -1,5 +1,9 @@
 module AssetSync
 
+  autoload :Config, 'asset_sync/config'
+  autoload :Storage, 'asset_sync/storage'
+  autoload :MultiMime, 'asset_sync/multi_mime'
+
   class << self
 
     def config=(data)

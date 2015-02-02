@@ -1,5 +1,9 @@
 # RELEASE HISTORY
 
+## Unreleased
+
+* Defer loading of dependencies until needed. Expect fog provider gem to already be loaded.
+
 ## v1.1.0 / 2014-08-13
 
 Version 1.1.0 (Toby Osbourn <tosbourn@rumblelabs.com>)

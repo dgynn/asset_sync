@@ -8,6 +8,7 @@ module AssetSync
       app_yaml = Rails.root.join('config', 'asset_sync.yml').to_s
 
       if File.exist?( app_initializer )
+        # TODO: didn't the initializer already get run? and might it not had a different name?
         AssetSync.log "AssetSync: using #{app_initializer}"
         load app_initializer
       elsif !File.exist?( app_initializer ) && !File.exist?( app_yaml )
