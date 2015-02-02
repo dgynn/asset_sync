@@ -230,6 +230,14 @@ module AssetSync
 
       if self.config.cdn_distribution_id && files_to_invalidate.any?
         log "Invalidating Files"
+        begin
+          # TODO: make a config option for the provider requirement that should be dynamically loaded
+          # require 'fog/storage' unless defined?(Fog::Storage)
+          require 'fog/aws/cdn'
+        rescue LoadError => e
+          log('You must include your fog provider gem in your Gemfile')
+          raise e
+        end
         cdn ||= Fog::CDN.new(self.config.fog_options.except(:region))
         data = cdn.post_invalidation(self.config.cdn_distribution_id, files_to_invalidate)
         log "Invalidation id: #{data.body["Id"]}"

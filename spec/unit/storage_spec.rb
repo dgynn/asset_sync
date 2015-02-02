@@ -1,4 +1,5 @@
 require File.dirname(__FILE__) + '/../spec_helper'
+require 'fog/cdn'
 
 describe AssetSync::Storage do
   include_context "mock Rails without_yml"

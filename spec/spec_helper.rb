@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler'
+require 'active_support/ordered_options'
 
 begin
   require 'simplecov'
