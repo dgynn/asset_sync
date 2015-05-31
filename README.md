@@ -22,17 +22,12 @@ Add the gem to your Gemfile
 gem 'asset_sync'
 ```
 
-### Optimized Fog and AssetSync loading
+### Optimized Fog AWS loading
 
-Since AssetSync doesn't know which parts of Fog you intend to use, it will just load the entire library.
-If you prefer to load fewer classes into your application, which will reduce load time and memory use,
-you need to load those parts of Fog yourself *before* loading AssetSync:
+This fork of asset_sync has fog-aws as a dependency and defers loading any fog classes until
+it is time to perform a sync. You do not need to include fog or fog-aws in your Gemfile.
 
-In your Gemfile:
-```ruby
-gem "fog-aws", require: "fog/aws/storage"
-gem "asset_sync"
-```
+As this breaks all sorts of tests, the specs have not been updated.
 
 If you only sync assets for non-development environements, you can further speed up environment loading
 by limiting the groups where AssetSync is available.
@@ -40,7 +35,6 @@ by limiting the groups where AssetSync is available.
 In your Gemfile:
 ```ruby
 groups: [:production, :staging]
-  gem "fog-aws", require: "fog/aws/storage"
   gem "asset_sync"
 end
 ```

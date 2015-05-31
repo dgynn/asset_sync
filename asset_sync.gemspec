@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "asset_sync"
 
-  s.add_dependency('fog-core')
+  s.add_dependency('fog-aws')
   s.add_dependency('activemodel')
 
   s.add_development_dependency 'fog'

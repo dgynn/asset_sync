@@ -15,7 +15,7 @@ module AssetSync
       begin
         # TODO: make a config option for the provider requirement that should be dynamically loaded
         # require 'fog/storage' unless defined?(Fog::Storage)
-        require 'fog/aws/storage'
+        require 'fog/aws'
       rescue LoadError => e
         log('You must include your fog provider gem in your Gemfile')
         raise e
@@ -233,7 +233,7 @@ module AssetSync
         begin
           # TODO: make a config option for the provider requirement that should be dynamically loaded
           # require 'fog/storage' unless defined?(Fog::Storage)
-          require 'fog/aws/cdn'
+          require 'fog/aws'
         rescue LoadError => e
           log('You must include your fog provider gem in your Gemfile')
           raise e
